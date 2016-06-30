@@ -1,0 +1,131 @@
+@import "variables";
+
+h1 {
+  color: @textColorSecondary;
+}
+
+h2, h3, h4, h5, h6 {
+  color: @textColorPrimary;
+}
+
+a {
+  color: @textColorTertiary;
+
+  &:hover {
+    color: @darkOrange;
+    text-decoration: underline;
+  }
+}
+
+#header {
+  background-color: @bgColorPrimary;
+  border-bottom: 4px solid @darkOrange;
+  margin-bottom: 1.5em
+}
+
+#navigation {
+  background-color: @bgColorPrimary;
+  // border-bottom: 4px solid @darkOrange;
+}
+
+#content-head {
+  background-color: @bgColorPrimary;
+
+  // If we want space on each side of page headers
+  width: 1100px !important; // TODO: make responsive
+  padding-left: 1em;
+  margin: auto;
+  border-radius: @borderRadBig;
+  padding: .66em 2em !important;
+}
+
+#logo {
+  max-width: 200px;
+  min-width: 125px;
+
+  img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+#primarynav {
+  a {
+    text-decoration: none;
+    text-transform: capitalize;
+  }
+
+  li > a {
+    font-size: 13px;
+    color: @textColorTertiary;
+
+    transition: color .3s;
+
+    &:hover {
+      color: @textColorSecondary;
+      transition: color .3s;
+    }
+  }
+
+  li.here > a {
+    color: white;
+    border-bottom: 2px solid white !important;
+  }
+
+  // Styles Dropdowns
+  & li:not(&-more) {
+    float: left;
+    position: relative;
+
+    a {
+      display: block;
+    }
+
+    ul {
+      // border: 1px solid @lightOrange;
+      border-radius: @borderRadMed;
+      background-color: #fff;
+      box-shadow: 5px 3px 5px black;
+
+      display: none;
+
+      z-index: 110;
+
+      position: absolute;
+      left: 0;
+      top: 100%;
+    }
+
+    &:hover ul {
+      display: block;
+    }
+
+    li {
+      float: none;
+    }
+
+    li > a {
+      margin: 0;
+      min-width: 10em;
+      text-align: left;
+      padding-left: 1em;
+
+      color: @textColorPrimary;
+    }
+
+    li > a:hover {
+      color: @textColorTertiary;
+    }
+  }
+}
+
+#navigation {
+  overflow: visible;
+}
+
+#main {
+  margin-top: 2em !important;
+}
+
+@import "ingage";
+@import "responsive";

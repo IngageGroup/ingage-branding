@@ -1,0 +1,36 @@
+{
+  "name": "ingage-branding",
+  "version": "0.0.1",
+  "description": "contains the code and styles used to customize Ingage Partner's Intranet",
+  "private": true,
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack --colors --progress",
+    "start": "webpack --colors --progress --watch"
+  },
+  "contributors": [
+    {
+      "name": "Jon Horner",
+      "email": "jon.horner@ingagepartners.com"
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/IngageGroup/ingage-branding.git"
+  },
+  "license": "See license in LICENSE.txt",
+  "devDependencies": {
+    "babel-core": "^6.9.1",
+    "babel-loader": "^6.2.4",
+    "babel-preset-es2015": "^6.9.0",
+    "css-loader": "^0.23.1",
+    "extract-text-webpack-plugin": "^1.0.1",
+    "less": "^2.7.1",
+    "less-loader": "^2.2.3",
+    "style-loader": "^0.13.1",
+    "webpack": "^1.13.1"
+  },
+  "dependencies": {
+    "ramda": "^0.21.0"
+  }
+}
