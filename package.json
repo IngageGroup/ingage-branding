@@ -1,6 +1,6 @@
 {
   "name": "ingage-branding",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "contains the code and styles used to customize Ingage Partner's Intranet",
   "private": true,
   "main": "index.js",
