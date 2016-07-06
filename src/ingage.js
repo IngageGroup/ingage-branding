@@ -15,8 +15,8 @@ const navStruct = {
     'Ingage Feed': 'ingage_feed',
     'Events': 'events',
     'Holidays': 'holidayspto',
-    'Pictures': 'ingagepictures',
     'Community Engagement': 'engagement',
+    'Pictures': 'engagement/ingagepictures',
     'Community Wiki': 'community_wiki',
     'Ingage Day': 'ingageday',
   },
@@ -84,6 +84,8 @@ const injectDropdowns = ($) => {
     }
   }
 
+
+  // Same as above loop except adds the external links
   for (let i = 0; i < extNavKeys.length; ++i) {
     const navItem = extNavKeys[i];
     const navSel = `#nav-${navItem}`;
@@ -93,7 +95,7 @@ const injectDropdowns = ($) => {
     let linkEl = '';
 
     for (let j = 0; j < childNavKeys.length; ++j) {
-      linkEl = `<li class="nav-dropdown-item"><a href="${externalLinks[navItem][childNavKeys[j]]}">${childNavKeys[j]}</a></li>`;
+      linkEl = `<li class="nav-dropdown-item"><a target="_blank" href="${externalLinks[navItem][childNavKeys[j]]}">${childNavKeys[j]}</a></li>`;
     }
 
     $(navSel + ' > ul.nav-dropdown').append(linkEl);
