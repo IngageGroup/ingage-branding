@@ -12,14 +12,14 @@ a {
   color: @textColorTertiary;
 
   &:hover {
-    color: @darkOrange;
+    color: @lightBlue;
     text-decoration: underline;
   }
 }
 
 #header {
   background-color: @bgColorPrimary;
-  border-bottom: 4px solid @darkOrange;
+  border-bottom: 4px solid @darkGreen;
   margin-bottom: 1.5em
 }
 
@@ -29,7 +29,7 @@ a {
 }
 
 #content-head {
-  background-color: @bgColorPrimary;
+  background-color: @bgColorSecondary;
 
   // If we want space on each side of page headers
   width: 1100px !important; // TODO: make responsive
@@ -62,14 +62,14 @@ a {
     transition: color .3s;
 
     &:hover {
-      color: @textColorSecondary;
+      color: @textColorPrimary;
       transition: color .3s;
     }
   }
 
   li.here > a {
-    color: white;
-    border-bottom: 2px solid white !important;
+    color: @textColorPrimary;
+    border-bottom: 2px solid @textColorPrimary !important;
   }
 
   // Styles Dropdowns
@@ -125,6 +125,10 @@ a {
 
 #main {
   margin-top: 2em !important;
+}
+
+.nav-dropdown {
+  border: 1px solid @gray;
 }
 
 @import "ingage";

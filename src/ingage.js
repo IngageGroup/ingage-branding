@@ -12,26 +12,26 @@ import { isEmpty, keys } from 'ramda';
 const navStruct = {
   'news': {
     'News': 'news_page',
-    'Thrive Feed': 'thrive_feed',
+    'Ingage Feed': 'ingage_feed',
     'Events': 'events',
-    'Holidays/PTO': 'holidayspto',
-    'Pictures': 'thrivepictures',
+    'Holidays': 'holidayspto',
+    'Pictures': 'ingagepictures',
     'Community Engagement': 'engagement',
     'Community Wiki': 'community_wiki',
-    'Thrive Afternoons': 'thriveafternoons',
+    'Ingage Day': 'ingageday',
   },
   'employeegrowth': {
-    'Grad Plan': 'gradplan',
     'Learning Portal': 'learning_portal',
     'Learning Wiki': 'learning_wiki',
   },
   'hr': {
     'Onboarding': 'onboarding',
+    'Info and Links': 'info_links',
     'Founders': 'founders',
     'Admins': 'admins',
     'Management': 'management',
-    'Huddle Leads': 'huddle_leads',
-    'Analysts': 'analysts',
+    'Support Team': 'support_team',
+    'Consultants': 'consultants',
     'All Members': 'all_members',
   },
   'forum': {
@@ -49,9 +49,16 @@ const navStruct = {
   },
 };
 
+const externalLinks = {
+  'employeegrowth': {
+    'GRaD Plan': 'https://ingagepartners.peoplegoal.com/',
+  },
+};
+
 const injectDropdowns = ($) => {
   const baseUrl = `${window.location.protocol}//${window.location.host}`;
   const topNavKeys = keys(navStruct);
+  const extNavKeys = keys(externalLinks);
 
   // For each item in the primary nav bar...
   for (let i = 0; i < topNavKeys.length; ++i) {
@@ -76,12 +83,26 @@ const injectDropdowns = ($) => {
       $(navSel).append(dropdown);
     }
   }
+
+  for (let i = 0; i < extNavKeys.length; ++i) {
+    const navItem = extNavKeys[i];
+    const navSel = `#nav-${navItem}`;
+
+    const childNavKeys = keys(externalLinks[navItem]);
+
+    let linkEl = '';
+
+    for (let j = 0; j < childNavKeys.length; ++j) {
+      linkEl = `<li class="nav-dropdown-item"><a href="${externalLinks[navItem][childNavKeys[j]]}">${childNavKeys[j]}</a></li>`;
+    }
+
+    $(navSel + ' > ul.nav-dropdown').append(linkEl);
+  }
 };
 
 const newTabLinks = ($) => {
   $('.new-tab a').each(function(index) {
     this.target = '_blank';
-    console.log(`${index}: `, this);
   });
 };
 

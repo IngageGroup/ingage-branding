@@ -1,6 +1,6 @@
 @import "variables";
 
-.thrive {
+.ingage {
   &.side-nav {
     .ig-cpt-body {
       border: none !important;
@@ -15,7 +15,7 @@
         padding-left: 1em;
 
         background-color: @bgColorSecondary;
-        color: @textColorPrimary;
+        color: @textColorSecondary;
 
         transition-property: background-color, color;
         transition-duration: .3s;
@@ -24,8 +24,12 @@
       a:hover {
         text-decoration: none;
 
-        background-color: @bgColorPrimary;
+        background-color: @darkGray;
         color: @textColorSecondary;
+      }
+
+      li.ig-here > a {
+        background-color: @darkGray;
       }
 
       li+li {
@@ -39,15 +43,14 @@
 
     background-color: @bgColorSecondary;
     border-color: @bgColorSecondary !important;
-    color: @textColorPrimary;
+    color: @textColorSecondary;
 
-    transition-property: background-color, border-color, color;
+    transition-property: background-color, border-color;
     transition-duration: .3s;
 
     &:hover {
-      background-color: @bgColorPrimary;
+      background-color: @darkGray;
       border-color: @bgColorPrimary !important;
-      color: @textColorSecondary;
 
       text-decoration: none;
     }
@@ -58,14 +61,13 @@
     border-radius: @borderRadMed;
 
     background-color: @bgColorSecondary !important;
-    color: @textColorPrimary !important;
+    color: @textColorSecondary !important;
 
-    transition-property: background-color, color;
+    transition-property: background-color;
     transition-duration: .3s;
 
     &:hover {
-      background-color: @bgColorPrimary !important;
-      color: @textColorSecondary !important;
+      background-color: @darkGray !important;
     }
   }
 
