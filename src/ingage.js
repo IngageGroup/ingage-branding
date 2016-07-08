@@ -28,25 +28,17 @@ const navStruct = {
   'hr': {
     'Onboarding': 'onboarding',
     'Info and Links': 'info_links',
-    'Founders': 'founders',
-    'Admins': 'admins',
-    'Management': 'management',
-    'Support Team': 'support_team',
-    'Consultants': 'consultants',
-    'All Members': 'all_members',
+  },
+  'projects': {
+    'Client Projects': 'client_projects',
+    'Client Project Archives': 'client_project_archives',
+    'Internal Projects': 'internal_projects',
+    'Internal Project Archives': 'internal_project_archives',
   },
   'forum': {
     'General Help': 'help',
     'Report Issues/Bugs': 'bug',
     'Feedback': 'feedback',
-  },
-
-  // TODO: add paths to the following dropdown items
-  'projects': {
-    'Client Projects': '',
-    'Client Project Archives': '',
-    'Internal Projects': '',
-    'Internal Project Archives': '',
   },
 };
 
@@ -93,13 +85,16 @@ const injectDropdowns = ($) => {
 
     const childNavKeys = keys(externalLinks[navItem]);
 
-    let linkEl = '';
+    if (childNavKeys.length > 0) {
+      $(navSel + ' > ul.nav-dropdown').append('<hr>');
+      let linkEl = '';
 
-    for (let j = 0; j < childNavKeys.length; ++j) {
-      linkEl = `<li class="nav-dropdown-item"><a target="_blank" href="${externalLinks[navItem][childNavKeys[j]]}">${childNavKeys[j]}</a></li>`;
+      for (let j = 0; j < childNavKeys.length; ++j) {
+        linkEl = `<li class="nav-dropdown-item"><a target="_blank" href="${externalLinks[navItem][childNavKeys[j]]}">${childNavKeys[j]}</a></li>`;
+      }
+
+      $(navSel + ' > ul.nav-dropdown').append(linkEl);
     }
-
-    $(navSel + ' > ul.nav-dropdown').append(linkEl);
   }
 };
 
