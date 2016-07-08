@@ -23,6 +23,7 @@ const navStruct = {
   'employeegrowth': {
     'Learning Portal': 'learning_portal',
     'Learning Wiki': 'learning_wiki',
+    'Training Videos': 'training_videos',
   },
   'hr': {
     'Onboarding': 'onboarding',

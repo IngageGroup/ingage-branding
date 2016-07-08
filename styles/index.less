@@ -25,7 +25,6 @@ a {
 
 #navigation {
   background-color: @bgColorPrimary;
-  // border-bottom: 4px solid @darkOrange;
 }
 
 #content-head {
@@ -46,6 +45,7 @@ a {
   img {
     width: 100%;
     height: auto;
+    margin-bottom: 1.5rem;
   }
 }
 
@@ -72,10 +72,11 @@ a {
     border-bottom: 2px solid @textColorPrimary !important;
   }
 
-  // Styles Dropdowns
+  /** Nav Dropdown Styles **/
   & li:not(&-more) {
     float: left;
     position: relative;
+    font-size: .8rem;
 
     a {
       display: block;
