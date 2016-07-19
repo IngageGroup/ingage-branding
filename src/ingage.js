@@ -39,6 +39,8 @@ const navStruct = {
     'General Help': 'help',
     'Report Issues/Bugs': 'bug',
     'Feedback': 'feedback',
+    'Dev Discussions': 'dev_discussions',
+    'UX Discussions': 'ux_discussions',
   },
 };
 
@@ -105,9 +107,9 @@ const newTabLinks = ($) => {
 };
 
 module.exports = (($) => {
-  $(window).unload(() => $('.nav-dropdown').remove());
+  // $(window).unload(() => $('.nav-dropdown').remove());
   $(window).load(() => {
-    injectDropdowns($);
+  //   injectDropdowns($);
     newTabLinks($);
   });
 })(jQuery);
